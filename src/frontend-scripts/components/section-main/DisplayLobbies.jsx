@@ -81,6 +81,8 @@ const DisplayLobbies = props => {
 		let avalonSHTooltip;
 		let monarchistSH;
 		let monarchistSHTooltip;
+		let telephoneSH;
+		let telephoneSHTooltip;
 		let noTopdecking;
 		let noTopdeckingTooltip;
 		let timedMode;
@@ -198,6 +200,11 @@ const DisplayLobbies = props => {
 			monarchistSHTooltip = 'Monarchist SH';
 		}
 
+		if (game.telephoneSH) {
+			telephoneSH = <i className="phone icon" />;
+			telephoneSHTooltip = 'Telephone SH';
+		}
+
 		if (game.noTopdecking) {
 			noTopdecking = <i className="gavel icon" />;
 			noTopdeckingTooltip = game.noTopdecking === 2 ? 'No Double Topdecking' : 'No Topdecking';
@@ -303,6 +310,11 @@ const DisplayLobbies = props => {
 				{monarchistSH && (
 					<span data-tooltip={monarchistSHTooltip} data-inverted="">
 						{monarchistSH}
+					</span>
+				)}
+				{telephoneSH && (
+					<span data-tooltip={telephoneSHTooltip} data-inverted="">
+						{telephoneSH}
 					</span>
 				)}
 				{noTopdecking && (

@@ -52,6 +52,7 @@ export default class Creategame extends React.Component {
 			avalonSH: false,
 			withPercival: false,
 			monarchistSH: false,
+			telephoneSH: false,
 			customGameSettings: {
 				enabled: false,
 				// Valid powers: investigate, deckpeek, election, bullet; null for no power
@@ -1077,6 +1078,7 @@ export default class Creategame extends React.Component {
 				avalonSH: this.state.avalonSH,
 				withPercival: this.state.avalonSH && this.state.withPercival,
 				monarchistSH: this.state.monarchistSH,
+				telephoneSH: this.state.telephoneSH,
 				noTopdecking: this.state.noTopdecking ? this.state.noTopdecking[0] : 0
 			};
 
@@ -2265,6 +2267,27 @@ export default class Creategame extends React.Component {
 									});
 								}}
 								checked={this.state.monarchistSH}
+								onColor="#627cc8"
+								offColor="#444444"
+								uncheckedIcon={false}
+								checkedIcon={false}
+								height={21}
+								width={48}
+								handleDiameter={21}
+							/>
+						</div>
+						<div className="four wide column">
+							<i className="big phone icon" />
+							<h4 className="ui header">Telephone mode - Only talk to your neighbours, casual only</h4>
+							<Switch
+								className="create-game-switch"
+								onChange={checked => {
+									this.setState({
+										telephoneSH: checked,
+										gameType: checked ? 'casual' : this.state.privateShowing || this.state.privateonlygame ? 'private' : 'ranked'
+									});
+								}}
+								checked={this.state.telephoneSH}
 								onColor="#627cc8"
 								offColor="#444444"
 								uncheckedIcon={false}

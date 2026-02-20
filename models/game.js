@@ -41,6 +41,7 @@ const Game = new Schema({
 	avalonSH: {
 		withPercival: Boolean
 	},
+	telephoneSH: Boolean,
 	noTopdecking: Number,
 	completed: Boolean
 });

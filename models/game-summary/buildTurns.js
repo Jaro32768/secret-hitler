@@ -13,6 +13,7 @@ module.exports = (
 		rerebalance9p: false,
 		monarchistSH: null,
 		avalonSH: null,
+		telephoneSH: null,
 		noTopdecking: 0
 	}
 ) => buildTurns(List(), logs, players, gameSetting);

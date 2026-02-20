@@ -25,6 +25,7 @@ const gameSummary = new Schema({
 			},
 			default: null
 		},
+		telephoneSH: Boolean,
 		noTopdecking: Number
 	},
 	players: [

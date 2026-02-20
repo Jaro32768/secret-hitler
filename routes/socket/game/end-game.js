@@ -64,6 +64,7 @@ const generateGameObject = game => {
 			xpMinimum: game?.general?.xpMinimum,
 			avalonSH: game?.general?.avalonSH,
 			monarchistSH: game?.general?.monarchistSH,
+			telephoneSH: game?.general?.telephoneSH,
 			noTopdecking: game?.general?.noTopdecking,
 			completed: true
 		};
@@ -105,6 +106,7 @@ const generateGameObject = game => {
 		xpMinimum: game?.general?.xpMinimum,
 		avalonSH: game?.general?.avalonSH,
 		monarchistSH: game?.general?.monarchistSH,
+		telephoneSH: game?.general?.telephoneSH,
 		noTopdecking: game.general?.noTopdecking,
 		completed: false
 	};

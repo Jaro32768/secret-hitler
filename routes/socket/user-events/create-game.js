@@ -225,7 +225,7 @@ module.exports.handleAddNewGame = async (socket, passport, data) => {
 	const casualGame =
 		(data.casualGame || (typeof data.timedMode === 'number' && data.timedMode < 30)
 			? true
-			: data.gameType === 'casual' || data.avalonSH || data.withPercival || data.monarchistSH || data.noTopdecking > 0) && !customGame;
+			: data.gameType === 'casual' || data.avalonSH || data.withPercival || data.monarchistSH || data.telephoneSH || data.noTopdecking > 0) && !customGame;
 	const practiceGame =
 		!(typeof data.timedMode === 'number' && data.timedMode < 30) &&
 		(data.gameType === 'practice' || data.playerChats === 'disabled') &&
@@ -283,6 +283,7 @@ module.exports.handleAddNewGame = async (socket, passport, data) => {
 			xpMinimum: data.xpSliderValue,
 			avalonSH: data.avalonSH ? { withPercival: Boolean(data.withPercival) } : null,
 			monarchistSH: Boolean(data.monarchistSH),
+			telephoneSH: Boolean(data.telephoneSH),
 			noTopdecking: data.noTopdecking
 		},
 		customGameSettings: data.customGameSettings,

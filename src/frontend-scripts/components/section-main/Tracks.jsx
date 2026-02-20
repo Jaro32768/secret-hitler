@@ -138,6 +138,8 @@ class Tracks extends React.Component {
 		let avalonSHTooltip;
 		let monarchistSH;
 		let monarchistSHTooltip;
+		let telephoneSH;
+		let telephoneSHTooltip;
 		let noTopdecking;
 		let noTopdeckingTooltip;
 		let timedMode;
@@ -252,6 +254,11 @@ class Tracks extends React.Component {
 			monarchistSHTooltip = 'Monarchist SH';
 		}
 
+		if (game.telephoneSH) {
+			telephoneSH = <i className="phone icon" />;
+			telephoneSHTooltip = 'Telephone SH';
+		}
+
 		if (game.noTopdecking) {
 			noTopdecking = <i className="gavel icon" />;
 			noTopdeckingTooltip = game.noTopdecking === 2 ? 'No Double Topdecking' : 'No Topdecking';
@@ -352,6 +359,11 @@ class Tracks extends React.Component {
 				{monarchistSH && (
 					<span>
 						<Popup style={{ zIndex: 999999 }} inverted trigger={monarchistSH} content={monarchistSHTooltip} />
+					</span>
+				)}
+				{telephoneSH && (
+					<span>
+						<Popup style={{ zIndex: 999999 }} inverted trigger={telephoneSH} content={telephoneSHTooltip} />
 					</span>
 				)}
 				{noTopdecking && (
